@@ -62,11 +62,11 @@ This setup gives you a secure deployment environment for MongoDB, enabling you t
 ### Steps to Enable Security with This Add-On:
 
 1. **Clone This Repository**:  
-   Clone the `mongo-infra-docker-security-addon` repository *into the `MEKO-opsmanager` directory* of the `mongo-infra-minikube` repository:  
+   Clone the `mongo-infra-minikube-security-addon` repository *into the `MEKO-opsmanager` directory* of the `mongo-infra-minikube` repository:  
    ```bash
-   git clone https://github.com/thedanmaor/mongo-infra-docker-security-addon.git
-   mv mongo-infra-docker-security-addon/* .
-   rm -rf mongo-infra-docker-security-addon
+   git clone https://github.com/thedanmaor/mongo-infra-minikube-security-addon.git
+   mv mongo-infra-minikube-security-addon/* .
+   rm -rf mongo-infra-minikube-security-addon
    ```
 
 2. **Deploy Secure Sample Replica Set**:  
