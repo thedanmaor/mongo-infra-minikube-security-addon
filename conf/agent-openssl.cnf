@@ -1,0 +1,21 @@
+[ req ]
+default_bits = 4096
+default_md = sha256
+prompt = no
+distinguished_name = dn
+
+[ dn ]
+C = IL
+ST = IL
+L = Tel-Aviv
+O = MongoDB
+OU = TSE-agents
+CN = my-replica-sample-agent
+
+[ client_cert ]
+extendedKeyUsage = clientAuth
+
+[ alternate_names ]
+DNS.0 = my-replica-sample-0.my-replica-sample-svc.mongodb.svc.cluster.local
+DNS.1 = my-replica-sample-1.my-replica-sample-svc.mongodb.svc.cluster.local
+DNS.2 = my-replica-sample-2.my-replica-sample-svc.mongodb.svc.cluster.local

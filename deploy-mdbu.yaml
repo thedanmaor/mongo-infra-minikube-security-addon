@@ -1,0 +1,33 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-scram-user-password
+type: Opaque
+stringData:
+  password: UGFzc3cwcmQxCg== # Passw0rd1
+data: #(Passw0rd1!)
+  password: UGFzc3cwcmQxCg== # Passw0rd1
+---
+apiVersion: mongodb.com/v1
+kind: MongoDBUser
+metadata:
+  name: myuser
+spec:
+  passwordSecretKeyRef:
+    name: my-scram-user-password
+    key: password
+  username: myuser
+  db: "admin" #
+  mongodbResourceRef:
+    name: my-replica-sample
+    namespace: mongodb
+  roles:
+    - db: "admin"
+      name: "clusterAdmin"
+    - db: "admin"
+      name: "userAdminAnyDatabase"
+    - db: "admin"
+      name: "readWrite"
+    - db: "admin"
+      name: "userAdminAnyDatabase"
